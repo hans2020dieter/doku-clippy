@@ -13,74 +13,14 @@ if ( !defined( 'DOKU_PLUGIN' ) ) define( 'DOKU_PLUGIN', DOKU_INC.'lib/plugins/' 
 require_once DOKU_PLUGIN.'syntax.php';
 
 class syntax_plugin_clippy extends DokuWiki_Syntax_Plugin {
-  /**
-   *
-   *
-   * @return string Syntax mode type
-   */
-  public function gettype() {
-    return 'substition';
-  }
-  /**
-   *
-   *
-   * @return string Paragraph type
-   */
-  public function getPType() {
-    return 'block';
-  }
-  /**
-   *
-   *
-   * @return int Sort order - Low numbers go before high numbers
-   */
-  public function getSort() {
-    return 999;
-  }
+  
+  public function getType() { return 'substition'; }
+  function getAllowedTypes() { return array('formatting', 'substition', 'disabled'); }
+  public function getPType() { return 'normal'; }
+  public function getSort() { return 999; }
+  public function connectTo( $mode ) { $this->Lexer->addSpecialPattern( '<clippy>.*?</clippy>', $mode, 'plugin_clippy' ); }
 
-  /**
-   * Connect lookup pattern to lexer.
-   *
-   * @param string  $mode Parser mode
-   */
-  public function connectTo( $mode ) {
-    $this->Lexer->addSpecialPattern( '<clippy>.*?</clippy>', $mode, 'plugin_clippy' );
-    // $this->Lexer->addSpecialPattern( '[clippy.*?]', $mode, 'plugin_clippy' );
-  }
-
-  // public function postConnect() {
-  //   $this->Lexer->addExitPattern( '</clippy>', 'plugin_clippy' );
-  // }
-
-  /**
-   * Handle matches of the clippy syntax
-   *
-   * @param string  $match   The match of the syntax
-   * @param int     $state   The state of the handler
-   * @param int     $pos     The position in the document
-   * @param Doku_Handler $handler The handler
-   * @return array Data for the renderer
-   */
   public function handle( $match, $state, $pos, Doku_Handler $handler ) {
-    // <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="110" height="14" class="clippy" >
-    //   <param name="movie" value="lib/clippy.swf"/>
-    //   <param name="allowScriptAccess" value="always" />
-    //   <param name="quality" value="high" />
-    //   <param name="scale" value="noscale" />
-    //   <param NAME="FlashVars" value="text={$text}">
-    //   <param name="bgcolor" value="#FFFFFF">
-    //   <embed src="lib/clippy.swf"
-    //     width="110"
-    //     height="14"
-    //     name="clippy"
-    //     quality="high"
-    //     allowScriptAccess="always"
-    //     type="application/x-shockwave-flash"
-    //     pluginspage="http://www.macromedia.com/go/getflashplayer"
-    //     FlashVars="text={$text}"
-    //     bgcolor="#FFFFFF"
-    //   />
-    // </object>
     if ( preg_match( '/\<clippy\>(.*)\<\/clippy\>/is', $match, $result ) === 1 ) {
       $text = $result[1];
     }
@@ -90,17 +30,9 @@ class syntax_plugin_clippy extends DokuWiki_Syntax_Plugin {
     else {
       return $data;
     }
-
     $data = array(
-      'width'  => 110,
-      'height' => 14,
-      'allowScriptAccess' => 'always',
-      'quality' => 'high',
-      'scale' => 'noscale',
-      'bgcolor' => '#FFFFFF',
       'text' => $text,
     );
-
     return $data;
   }
 
@@ -114,11 +46,16 @@ class syntax_plugin_clippy extends DokuWiki_Syntax_Plugin {
    */
   public function render( $mode, Doku_Renderer $renderer, $data ) {
     if ( $mode != 'xhtml' ) return false;
-    $movie = "lib/clippy.swf";
-    $flashvars = array( "text" => $data['text'] );
 
-    unset( $data['text'] );
-    $renderer->doc .= html_flashobject( DOKU_BASE.'lib/plugins/clippy/'.$movie, $data['width'], $data['height'], $data, $flashvars );
+	$renderer->doc .= '
+<span class="clippywrapper">
+	<span class="clippy" onclick="copyToClip(\'' . $data['text'] . '\',this);">
+		<span class="tooltiptext">Copy to Clipboard
+			<span class="arrow"></span>
+		</span>
+	</span>
+</span><span class="inlinewrapper"></span>
+	';
     return true;
   }
 }
