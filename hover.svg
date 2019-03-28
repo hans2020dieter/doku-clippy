@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generiert durch Microsoft Visio, SVG Export hover.svg Zeichenblatt-5 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="1.2336in" height="1.2707in"
+		viewBox="0 0 88.8192 91.4904" xml:space="preserve" color-interpolation-filters="sRGB" class="st3">
+	<v:documentProperties v:langID="1031"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#000000;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:3}
+		.st2 {fill:#000000;stroke:none;stroke-linecap:butt;stroke-width:0.75}
+		.st3 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-5</title>
+		<v:pageProperties v:drawingScale="1" v:pageScale="1" v:drawingUnits="19" v:shadowOffsetX="9" v:shadowOffsetY="-9"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(40.8764,-26.241)">
+			<title>Tabelle.21</title>
+			<path d="M1.31 90.36 L1.31 85.86 L5.78 90.33 L1.31 90.36 ZM18.52 66.41 L0 84.93 L0 91.49 L6.94 91.49 L25.23 73.2 L18.52
+						 66.41 ZM27.19 71.24 L29.44 68.99 L22.69 62.24 L20.44 64.49 L27.19 71.24 Z" class="st1"/>
+		</g>
+		<g id="shape2-3" v:mID="2" v:groupContext="shape" transform="translate(18.375,-18.375)">
+			<title>Tabelle.26</title>
+			<path d="M40.26 55.55 L40.26 48.61 L37.19 45.46 L30.97 45.46 L26.33 42.26 L24.78 39.09 L21.68 37.5 L18.58 37.5 L15.49
+						 39.09 L13.94 42.26 L9.29 45.46 L3.07 45.46 L0 48.61 L0 88.32 L3.09 91.49 L37.17 91.49 L40.26 88.32 L40.26
+						 60.24 L36.01 64.49 L36.01 86.73 L4.26 86.73 L4.26 50.2 L7.74 50.2 L7.74 54.57 L32.52 54.57 L32.52 50.2 L36.01
+						 50.2 L36.01 59.8 L40.26 55.55 ZM20.13 46.23 L18.49 45.64 L17.91 44.05 L18.49 42.26 L20.13 41.47 L21.78 42.26
+						 L22.36 44.05 L21.78 45.64 L20.13 46.23 Z" class="st2"/>
+		</g>
+		<g id="shape3-5" v:mID="3" v:groupContext="shape" transform="translate(27.3764,-27.366)">
+			<title>Tabelle.32</title>
+			<path d="M18 77.99 L0 77.99 L0 82.49 L13.5 82.49 L18 77.99 ZM11.25 86.99 L0 86.99 L0 91.49 L11.25 91.49 L11.25 86.99
+						 ZM0 68.99 L0 73.49 L22.5 73.49 L22.5 68.99 L0 68.99 Z" class="st1"/>
+		</g>
+	</g>
+</svg>
