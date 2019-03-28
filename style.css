@@ -1,0 +1,78 @@
+.clippywrapper {
+	position: absolute;
+	width: 0;
+	height: 1em;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+.inlinewrapper {
+	position: relative;
+	display: inline-block;
+	width: 0;
+	height: 1em;
+	margin: 0 1.65em 0 0;
+	padding: 0;
+}
+.clippy {
+	position: absolute;
+	background-image: url("svg/link.svg");
+	background-size: cover;
+	border: none;
+	width: 2em;
+	height: 2em;
+	margin: 0;
+	padding: 0;
+	top: -40%;
+}
+.clippy .tooltiptext {
+	font-weight: bold;
+	font-size: x-small;
+	text-align: center;
+	border-radius: 5px;
+    min-width: 50px;
+    max-width: 400px;
+	white-space: nowrap;
+    left:45%;
+    transform: translate(-50%, -100%);
+    padding:4px 10px;
+    color:#333;
+    background-color:#ffe;
+    position:absolute;
+    box-sizing:border-box;
+    box-shadow: 2px 2px 5px #000;
+	opacity:0;
+	transition: opacity 0.25s;
+	top: -50%;
+	visibility:hidden; 
+	z-index: 999;
+}
+
+.clippy:hover .tooltiptext {
+	opacity: 1;
+	visibility:visible;
+}
+.clippy:hover  {
+	background-image: url("svg/hover.svg");
+	cursor: pointer;
+}
+.clippy .tooltiptext .arrow {
+    position:absolute;
+    top:100%;
+    left:50%;
+    margin-left:-12px;
+    width:24px;
+    height:12px;
+    overflow:hidden;
+}
+.clippy .tooltiptext .arrow::after {
+    content:"";
+    position:absolute;
+    width:6px;
+    height:6px;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(45deg);
+    background-color:#ffe;
+    box-shadow: 2px 2px 5px #000;
+}
