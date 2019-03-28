@@ -1,7 +1,7 @@
 base   clippy
-author Derek Chafin
-email  infomaniac50@gmail.com
-date   2014-06-27
+author Hans Dieter
+email  hans2020dieter@gmx.de
+date   2019-03-28
 name   Doku Clippy
 desc   Copy text to the clipboard. Once this plugin is installed, you can add a pretty Clippy clip.
-url    https://github.com/infomaniac50/doku-clippy
+url    https://github.com/hans2020dieter/doku-clippy/
